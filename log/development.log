@@ -45329,3 +45329,71 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 19:31:15 -0800
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 19:31:15 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-03 19:51:04 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 234ms (Views: 194.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 19:51:05 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-02-03 19:51:10 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "email"=>"j@peng.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1[0m
+SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1
+Completed 500 Internal Server Error in 39ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.5ms)
