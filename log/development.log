@@ -46389,3 +46389,234 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-03 20:30:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (14.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 977ms (Views: 904.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 115ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:30:08 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-04 15:25:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 650ms (Views: 632.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:36 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-02-04 15:25:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"g2PJPorvgwJJ131Gjl8TUr1Vjg2brOR7DJun5GOC9KU=", "email"=>"jessikuhh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jessikuhh@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/events
+Completed 302 Found in 346ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-04 15:25:51 -0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')[0m
+  Rendered events/index.html.erb within layouts/application (159.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 378ms (Views: 256.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-04 15:25:52 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-04 15:27:41 -0800

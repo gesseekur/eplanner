@@ -40,7 +40,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'hirb'
-gem 'rails-footnotes', '~> 4.0'
+# gem 'rails-footnotes', '~> 4.0'
 
 # gem 'pg'
 
