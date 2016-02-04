@@ -45397,3 +45397,995 @@ ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: users: SEL
   Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
   Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-03 19:52:44 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 257ms (Views: 178.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 19:52:45 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-02-03 19:52:53 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "email"=>"j@peng.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1
+SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."email" = 'j@peng.com' LIMIT 1):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (138.3ms)
+  [1m[36mEvent Load (1.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+SQLite3::SQLException: no such table: events: SELECT "events".* FROM "events"
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+SQLite3::SQLException: no such table: events: SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160204040746)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "city" varchar(255), "state" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160204040746"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20160204041147)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "city" varchar(255), "user_id" integer, "state" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160204041147"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_user_id' AND type='index'
+[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-03 20:12:19 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "user"=>{"first_name"=>"Jess", "last_name"=>"dfshfdlf", "email"=>"jessikuhh@gmail.com", "city"=>"Arcadia", "state"=>"AL", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('jessikuhh@gmail.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("city", "created_at", "email", "first_name", "last_name", "password_digest", "state", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Arcadia"], ["created_at", "2016-02-04 04:12:19.637020"], ["email", "jessikuhh@gmail.com"], ["first_name", "Jess"], ["last_name", "dfshfdlf"], ["password_digest", "$2a$10$pQHDdorxhPPZJB3qK8Q8W.klG/q30UhNTnRxBqqvdRxUZntZiFLRK"], ["state", "AL"], ["updated_at", "2016-02-04 04:12:19.637020"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 201ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:12:19 -0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAttend Load (0.3ms)[0m  SELECT "attends".* FROM "attends"
+SQLite3::SQLException: no such table: attends: SELECT "attends".* FROM "attends"
+Footnotes #<Footnotes::Notes::AssignsNote:0x007fe7b7cd9398> Exception: SQLite3::SQLException: no such table: attends: SELECT "attends".* FROM "attends"
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `initialize'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `new'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `prepare'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:301:in `block in exec_query'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:298:in `exec_query'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:510:in `select'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/querying.rb:39:in `find_by_sql'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/relation.rb:611:in `exec_queries'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/relation.rb:493:in `load'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/relation.rb:238:in `to_a'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/relation.rb:602:in `inspect'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/notes/assigns_note.rb:44:in `block in to_table'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/notes/assigns_note.rb:41:in `each'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/notes/assigns_note.rb:41:in `inject'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/notes/assigns_note.rb:41:in `to_table'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/notes/assigns_note.rb:36:in `content'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:290:in `block in fieldsets'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/each_with_rescue.rb:15:in `block in each_with_rescue'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/each_with_rescue.rb:13:in `each'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/each_with_rescue.rb:13:in `each_with_rescue'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:355:in `each_with_rescue'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:285:in `fieldsets'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:188:in `insert_footnotes'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:97:in `add_footnotes_without_validation!'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/filter.rb:73:in `add_footnotes!'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rails-footnotes-4.1.7/lib/rails-footnotes/extension.rb:22:in `rails_footnotes_after_filter'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:424:in `block in make_lambda'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:231:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:231:in `block in halting'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:166:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:166:in `block in halting'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:166:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:166:in `block in halting'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:86:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:86:in `run_callbacks'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/notifications.rb:159:in `block in instrument'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/notifications.rb:159:in `instrument'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/abstract_controller/base.rb:136:in `process'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionview-4.1.8/lib/action_view/rendering.rb:30:in `process'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal.rb:196:in `dispatch'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_controller/metal.rb:232:in `block in action'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/routing/route_set.rb:82:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/routing/route_set.rb:50:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/journey/router.rb:73:in `block in call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/journey/router.rb:59:in `each'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/journey/router.rb:59:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/routing/route_set.rb:678:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/etag.rb:23:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/head.rb:11:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/flash.rb:254:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:225:in `context'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:220:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/query_cache.rb:36:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activerecord-4.1.8/lib/active_record/migration.rb:380:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/callbacks.rb:82:in `run_callbacks'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/railties-4.1.8/lib/rails/rack/logger.rb:38:in `call_app'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/railties-4.1.8/lib/rails/rack/logger.rb:22:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/activesupport-4.1.8/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/static.rb:84:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/railties-4.1.8/lib/rails/engine.rb:514:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/railties-4.1.8/lib/rails/application.rb:144:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+/Users/jessicapeng/.rvm/gems/ruby-2.2.1/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+/Users/jessicapeng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+/Users/jessicapeng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+/Users/jessicapeng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+Completed 200 OK in 222ms (Views: 125.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:12:20 -0800
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateComments (20160204041258)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar(255), "user_id" integer, "event_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_comments_on_event_id" ON "comments" ("event_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160204041258"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAttends (20160204041322)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "attends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_attends_on_user_id" ON "attends" ("user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_attends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_attends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_attends_on_event_id" ON "attends" ("event_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160204041322"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_attends_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_attends_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_attends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_attends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_event_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_user_id' AND type='index'
+
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:13:56 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')
+  Rendered events/index.html.erb within layouts/application (4.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAttend Load (0.2ms)[0m  SELECT "attends".* FROM "attends"
+Completed 200 OK in 212ms (Views: 111.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:13:57 -0800
+
+
+Started GET "/event/new" for 127.0.0.1 at 2016-02-03 20:13:59 -0800
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 170ms (Views: 133.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2016-02-03 20:14:07 -0800
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "event"=>{"user_id"=>"1", "name"=>"yyoyo", "date"=>"2018-01-19", "city"=>"afddfadf", "state"=>"AL"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (141.2ms)[0m  [1mINSERT INTO "events" ("city", "created_at", "date", "name", "state", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["city", "afddfadf"], ["created_at", "2016-02-04 04:14:08.167170"], ["date", "2018-01-19"], ["name", "yyoyo"], ["state", "AL"], ["updated_at", "2016-02-04 04:14:08.167170"], ["user_id", 1]]
+  [1m[35m (134.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/event/new
+Completed 302 Found in 315ms (ActiveRecord: 276.2ms)
+
+
+Started GET "/event/new" for 127.0.0.1 at 2016-02-03 20:14:08 -0800
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 344ms (Views: 310.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:09 -0800
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:14:11 -0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')
+  Rendered events/index.html.erb within layouts/application (65.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAttend Load (0.2ms)[0m  SELECT "attends".* FROM "attends"
+Completed 200 OK in 188ms (Views: 130.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2016-02-03 20:14:14 -0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 144ms (Views: 111.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "event"=>{"name"=>"yyoyo", "date"=>"2018-01-19", "city"=>"afddfadf", "state"=>"AL", "user_id"=>"1"}, "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 30ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')
+  Rendered events/index.html.erb within layouts/application (8.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAttend Load (0.2ms)[0m  SELECT "attends".* FROM "attends"
+Completed 200 OK in 137ms (Views: 84.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:16 -0800
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAttend Load (0.2ms)[0m  [1mSELECT "attends".* FROM "attends"  WHERE "attends"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 50ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')[0m
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAttend Load (0.2ms)[0m  [1mSELECT "attends".* FROM "attends"[0m
+Completed 200 OK in 122ms (Views: 76.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:20 -0800
+
+
+Started GET "/event/new" for 127.0.0.1 at 2016-02-03 20:14:21 -0800
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 118ms (Views: 87.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2016-02-03 20:14:35 -0800
+Processing by EventsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "event"=>{"user_id"=>"1", "name"=>"yyoyo", "date"=>"2018-01-01", "city"=>"sg", "state"=>"AL"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("city", "created_at", "date", "name", "state", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["city", "sg"], ["created_at", "2016-02-04 04:14:35.693194"], ["date", "2018-01-01"], ["name", "yyoyo"], ["state", "AL"], ["updated_at", "2016-02-04 04:14:35.693194"], ["user_id", 1]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/event/new
+Completed 302 Found in 41ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/event/new" for 127.0.0.1 at 2016-02-03 20:14:35 -0800
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 115ms (Views: 78.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:36 -0800
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:14:37 -0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')[0m
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAttend Load (0.1ms)[0m  [1mSELECT "attends".* FROM "attends"[0m
+Completed 200 OK in 188ms (Views: 125.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/sessions" for 127.0.0.1 at 2016-02-03 20:14:39 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ="}
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 104ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:40 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-03 20:14:49 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "user"=>{"first_name"=>"Steph", "last_name"=>"Curry", "email"=>"s@curry.com", "city"=>"LA", "state"=>"AL", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('s@curry.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "created_at", "email", "first_name", "last_name", "password_digest", "state", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["city", "LA"], ["created_at", "2016-02-04 04:14:49.701356"], ["email", "s@curry.com"], ["first_name", "Steph"], ["last_name", "Curry"], ["password_digest", "$2a$10$7AEmVOdEz1TtJ.dypthEF.y0.t4jp/3ddHNTbLSI6FnbdkBPaTqwm"], ["state", "AL"], ["updated_at", "2016-02-04 04:14:49.701356"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 135ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:14:49 -0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')[0m
+  Rendered events/index.html.erb within layouts/application (11.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAttend Load (0.2ms)[0m  [1mSELECT "attends".* FROM "attends"[0m
+Completed 200 OK in 243ms (Views: 179.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:14:50 -0800
+
+
+Started POST "/attends" for 127.0.0.1 at 2016-02-03 20:15:00 -0800
+Processing by AttendsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "attend"=>{"event_id"=>"2", "user_id"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (19.8ms)[0m  [1mINSERT INTO "attends" ("created_at", "event_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-02-04 04:15:00.552742"], ["event_id", 2], ["updated_at", "2016-02-04 04:15:00.552742"], ["user_id", 2]]
+  [1m[35m (11.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 70ms (ActiveRecord: 31.4ms)
+
+
+Started POST "/attends" for 127.0.0.1 at 2016-02-03 20:15:00 -0800
+Processing by AttendsController#create as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ=", "attend"=>{"event_id"=>"2", "user_id"=>"2"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attends" ("created_at", "event_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2016-02-04 04:15:00.623199"], ["event_id", 2], ["updated_at", "2016-02-04 04:15:00.623199"], ["user_id", 2]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 32ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-02-03 20:15:00 -0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."state" = 'AL'[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT "attends"."user_id" FROM "attends"  WHERE "attends"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT "attends"."id" FROM "attends"  WHERE "attends"."user_id" = 2 AND "attends"."event_id" = 2
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"  WHERE ("events"."state" != 'AL')[0m
+  Rendered events/index.html.erb within layouts/application (7.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAttend Load (0.2ms)[0m  [1mSELECT "attends".* FROM "attends"[0m
+Completed 200 OK in 149ms (Views: 87.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:01 -0800
+
+
+Started DELETE "/sessions" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GXLsY8TccQFoKrC7W15aFtabDpHLpovTdlq78yegIBQ="}
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 101ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/attendscreate.css?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/attendscreate.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-03 20:15:05 -0800
