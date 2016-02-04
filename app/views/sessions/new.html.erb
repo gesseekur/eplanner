@@ -1,0 +1,78 @@
+<nav>
+    <div class="nav-wrapper indigo darken-1">
+      <a href="#" class="left brand-logo">EPlanner</a>
+    </div>
+</nav>
+
+<div class="row">
+	<form class="col s6" action="/sessions" method="post">
+		<fieldset>
+			<legend>Login</legend>
+			   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">	
+			<div class="input-field col s6">
+				<p>
+					<label>Email:</label>
+					<input type="text" name="email">
+				</p>
+			</div>
+			<div class="input-field col s6">
+				<p>
+					<label>Password:</label>
+					<input type="password" name="password">
+				</p>
+			</div>
+			<input class="btn waves-effect waves-light  indigo accent-1" type="submit" value="Login">
+		</fieldset>
+	</form>
+
+	<form class="col s6" action="/users" method="post">		
+		<fieldset>
+			<legend>Register</legend>
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<div class="input-field col s12">
+				<p>
+					<label>First Name:</label>
+					<input type="text" name="user[first_name]">
+				</p>
+			</div>
+			<div class="input-field col s12">
+				<p>
+					<label>Last Name:</label>
+					<input type="text" name="user[last_name]">
+				</p>
+			</div>
+			<div class="input-field col s12">
+				<p>
+					<label>Email:</label>
+					<input type="text" name="user[email]">
+				</p>
+			</div>
+			<div class="input-field col s12">
+				<p>
+					<label>Location:</label>
+					<input type="text" name="user[city]">
+					<select class="select-field col s12" name="user[state]">
+						<% us_states.each do |state| %>
+							<option value='<%= state %>'> <%= state %> </option>
+						<% end %>
+					</select>
+				</p>
+			</div>
+			<div class="input-field col s12">
+				<p>
+					<label>Password:</label>
+					<input type="password" name="user[password]">
+				</p>
+				<p>*Password should be at least 8 characters</p>
+			</div>
+			<div class="input-field col s12">
+				<p>
+					<label>Confirm Password:</label>
+					<input type="password" name="user[password_confirmation]">
+				</p>
+			</div>
+			<input class="btn waves-effect waves-light  indigo accent-1" type="submit" value="Register">
+		</fieldset>
+	</form>
+</div>
+

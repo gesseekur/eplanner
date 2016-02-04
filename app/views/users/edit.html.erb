@@ -1,0 +1,44 @@
+<nav>
+    <div class="nav-wrapper indigo darken-1">
+      <a href="#" class="left brand-logo">EPlanner</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/events">Events Dashboard</a></li>
+        <li><a href="/sessions" data-method='delete'>Logout</a></li>
+      </ul>
+    </div>
+</nav>
+
+
+<div class="row container">
+	<h3><strong>Edit Your Profile</strong></h3>
+	<form class="col s6" action="/users/<%= @user.id %>" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	    <input type="hidden"name="_method"value="patch">
+		<p>
+			<label>First Name:</label>
+			<input type="text" name="user[first_name]" value='<%= @user.first_name %>'>
+		</p>
+		<p>
+			<label>Last Name:</label>
+			<input type="text" name="user[last_name]" value='<%= @user.last_name %>'>
+		</p>
+		<p>
+			<label>Email:</label>
+			<input type="text" name="user[email]" value='<%= @user.email %>'>
+		</p>
+			<p>
+			<label>Location:</label>
+			<input type="text" name="user[city]" value='<%= @user.city %>'>
+			<select name="user[state]">
+				<% us_states.each do |state| %>
+					<% if state == current_user.state %>
+						<option value='<%= state %>' selected> <%= state %>
+					<% else %>
+						<option value='<%= state %>'> <%= state %> </option>
+					<% end %>
+				<% end %>
+			</select>
+		</p>
+		<input class="center btn waves-effect waves-light  indigo accent-1" type="submit" value="Update Records">
+	</form>
+</div>

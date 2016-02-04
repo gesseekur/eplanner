@@ -1,0 +1,48 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background-color:#fafafa;
+}
+
+.brand-logo {
+	font-family:Montez;
+}
+
+h3 {
+	font-family:Trocchi;
+}
+
+h5{
+	font-family:Trocchi;
+}
+
+#chat {
+	overflow:scroll;	
+	width:600px;
+	height:300px;
+	border:1px solid #e0e0e0;
+	background-color:white;
+}
+
+.outside {
+	border:1px solid #e0e0e0;	
+}
+
+table {
+	background-color:white;
+}
+
+thead {
+	font-weight:bold;
+	color:#424242;
+}
+
+form {
+	border:1px solid #e0e0e0;
+}
+
+.textarea {
+	background-color:white;
+}

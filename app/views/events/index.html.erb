@@ -1,0 +1,109 @@
+<nav>
+    <div class="nav-wrapper indigo darken-1">
+      <a href="#" class="left brand-logo">EPlanner</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/users/<%= current_user.id %>">Edit My Profile</a></li>
+        <li><a href="/sessions" data-method='delete'>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="row container">
+	<h3>Welcome, <strong> <%= current_user.first_name %> </strong></h3>
+	<a class="grey-text text-lighten-5" href="/event/new"><button class="btn waves-effect waves-light  red">Make an Event</button></a>
+</div>
+<div class="row container">
+	<h5>Here are the events <b>in your state:</b></h5>
+	<table class="col s8 outside bordered highlight ">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Date</td>
+				<td>Location</td>
+				<td>Host</td>
+				<td>Action/Status</td>
+			</tr>
+		</thead>
+		<tbody>
+		<% if @events_same %>
+			<% @events_same.each do |e| %>
+			<tr>
+				<td><a href='/events/<%= e.id %>'><%= e.name %></a></td>
+				<td><%= e.date %></td>
+				<td><%= e.city %></td>
+				<td><%= e.user.first_name %></td>
+			<% if e.includes_user(current_user.id) %>
+				<td>
+					Attending 
+					<a class="red-text" href="/attends/<%= e.find_attend_id current_user %>" data-method='delete'>Cancel</a></td>
+			<% elsif current_user.id == e.user_id %>
+				<td>
+					<a class="green-text text-lighten-2" href="/events/<%= e.id %>/edit">Edit</a> 
+					<a class="red-text" href="/events/<%= e.id %>" data-method='delete'>Delete</a>
+				</td>
+			<% else %>
+				<td> 
+					<form action="/attends" method="post">
+						<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+						<input type="hidden" name="attend[event_id]" value="<%= e.id %>">
+						<input type="hidden" name="attend[user_id]" value="<%= current_user.id %>">
+						<input class="btn waves-effect waves-light  indigo accent-1" type="submit" value="Join">
+					</form>
+				</td>
+			<% end %>
+			</tr>
+		</tbody>
+			<% end %>	
+		<% end %>
+	</table>
+</div>
+
+<div class="row container">
+	<h5>Here are the events <b>out of state:</b></h5>
+	<table class="col s8 outside bordered highlight">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Date</td>
+				<td>Location</td>
+				<td>Host</td>
+				<td>Action/Status</td>
+			</tr>
+		</thead>
+		<tbody>
+		<% if @events_outside %>
+			<% @events_outside.each do |e| %>
+			<tr>
+				<td><a href='/events/<%= e.id %>'><%= e.name %></a></td>
+				<td><%= e.date %></td>
+				<td><%= e.city %></td>
+				<td><%= e.user.first_name %></td>
+			<% if e.includes_user(current_user.id) %>
+				<td> 
+					Attending 
+					<a class="red-text" href="/attends/<%= e.find_attend_id current_user %>" data-method='delete'>Cancel</a>
+				</td>
+			<% elsif current_user.id == e.user_id %>
+				<td>
+					<a class="green-text text-lighten-2" href="/events/<%= e.id %>/edit">Edit</a> 
+					<a class="red-text" href="/events/<%= e.id %>" data-method='delete'>Delete</a>
+				</td>
+			<% else %>
+				<td> 
+					<form action="/attends" method="post">
+						<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+						<input type="hidden" name="attend[event_id]" value="<%= e.id %>">
+						<input type="hidden" name="attend[user_id]" value="<%= current_user.id %>">
+						<input class="btn waves-effect waves-light indigo accent-1" type="submit" value="Join">
+					</form>
+				</td>
+			<% end %>
+			</tr>
+			<% end %>
+		<% end %>
+		</tbody>		
+	</table>
+</div>
+
+ 

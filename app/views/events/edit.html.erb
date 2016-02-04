@@ -1,0 +1,41 @@
+<nav>
+    <div class="nav-wrapper indigo darken-1">
+      <a href="#" class="left brand-logo">EPlanner</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/events">Events Dashboard</a></li>
+        <li><a href="/sessions" data-method='delete'>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="row container">
+	<h3>Edit Event: <b> <%= @event.name %> </b></h3>
+<form class="col s6" action="/events/<%= @event.id %>" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="hidden"name="_method"value="patch">
+	<p>
+		<label>Event Name: </label>
+		<input type="text" name="event[name]" value="<%= @event.name %>">
+	</p>
+	<p>
+		<label>Date of Event: </label>
+		<input type="date" name="event[date]" value="<%= @event.date %>">
+	</p>
+	<p>
+		<label> Location: </label>
+		<input type="text" name="event[city]" value="<%= @event.city %>">
+		<select name="event[state]">
+			<% us_states.each do |state| %>
+				<% if state == @event.state %>
+					<option value='<%= state %>' selected> <%= state %>
+				<% else %>
+					<option value='<%= state %>'> <%= state %> </option>
+				<% end %>
+			<% end %>
+		</select>
+	</p>
+	<input type="hidden" value="<%= @event.user_id %>" name="event[user_id]">
+	<input class="btn waves-effect waves-light indigo accent-1" type="submit" value="Update Event">
+</form>
+</div>

@@ -1,0 +1,62 @@
+<nav>
+    <div class="nav-wrapper indigo darken-1">
+      <a href="#" class="left brand-logo">EPlanner</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/events">Events Dashboard</a></li>
+        <li><a href="/sessions" data-method='delete'>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="row container">
+<h3> <%= @event.name %> </h3>
+<p> <b>Host:</b> <%= @event.user.first_name %> </p>
+<p> <b>Date:</b> <%= @event.date %> </p>
+<p> <b>Location:</b> <%= @event.city %>, <%= @event.state %></p>
+<p> <b>People who are joining the event:</b> <%= @event.attends.count %></p>
+</div>
+
+<div class="row container">
+<table class="col s8 outside bordered highlight">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Location</td>
+			<td>State</td>
+		</tr>
+	</thead>	
+	<tbody>
+		<% @attends.each do |a| %>
+		<tr>
+			<td><%= a.user.first_name %> </td>
+			<td><%= a.user.city %></td>
+			<td><%= a.user.state %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+
+<div class="row container">
+ <h5>Discussion about this event:</h5>
+  <div id="chat">
+	<div class="col s6">
+		<% @comment.each do |comment| %>
+		<%= comment.user.first_name %> says: <%= comment.comment %>
+		<hr>
+		<% end %>
+	</div>
+  </div>
+ </div>
+</div>
+
+<div class="row container">
+	<form class="col s6" action="/comments" method="post">
+		<p>Add a Comment:</p>
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type="hidden" name="user_id" value="<%= @event.user_id %>">
+		<p><textarea class="textarea" name="comment[comment]"></textarea></p>
+		<input type="hidden" name="comment[user_id]" value="<%= current_user.id %>">
+		<input type="hidden" name="comment[event_id]" value="<%= @event.id %>">
+		<p><input class="btn waves-effect waves-light  indigo accent-1" type="submit" value="Submit Comments"></p>
+	</form>
+</div>
