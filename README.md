@@ -1,3 +1,4 @@
+<h3>EPlanner</h3>
 A site created for easy event planning - powered by ROR.
 
 <h2>Installing</h2>
